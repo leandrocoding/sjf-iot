@@ -28,7 +28,8 @@
        <br>
        <article2>
             <h3>Currently measured moisture:</h3>
-            <h2 id="Currval">8</h2> 
+            <h1 id="Currval">8</h1> 
+            
         </article2>
         <br>
        <h3>Desired moisture </h3>0 is dry, 10 is wet.
@@ -62,7 +63,8 @@
    </main>
   
     <footer>
-       <p class="copyright">© 2020, SJF</p>
+       <p class="copyright">© 2020, Lukas Strübin, Leandro Zazzi</p>
    </footer>
+
 </body>
 </html> 
