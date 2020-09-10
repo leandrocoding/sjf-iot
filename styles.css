@@ -136,6 +136,46 @@ footer{
     display: flex;
 }
 
+.outer{
+    display: flex;
+    flex-direction: col;
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    /* text-align: justify; */
+    /* align-content: space-between;
+    align-items: baseline; */
+    /* flex */
+}
+
+.child1 {
+    /* align-self: baseline; */
+    display: flex;
+    flex: 1;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.child2 {
+    /* align-self: baseline; */
+    display: flex;
+    flex: 1;
+    /* align-content: center; */
+    justify-content: center;
+    align-items: center;
+}
+.child3 {
+    /* align-self: baseline; */
+    display: flex;
+    flex: 1;
+    /* align-content: flex-end;
+    align-items: flex-end;
+    align-self: flex-end; */
+    justify-content: flex-end;
+    align-self: flex-end;
+    a
+}
 
 @media screen and (max-width: 1400px){
     .banner .welcome h2{

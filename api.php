@@ -11,7 +11,7 @@ if(isset($_GET["val"])){
     echo $curVal; 
 
     file_put_contents("curval.txt",$curVal);
-    file_get_contents("lastCal.txt",time());
+    file_put_contents("lastCal.txt",time());
 }
 
 if(isset($_GET["up"])){
@@ -44,6 +44,8 @@ if(isset($_GET["get"])){
     }elseif($_GET["get"]=="time"){
         $lastcall=file_get_contents("lastCal.txt");
         $timesinze=time()-$lastcall;
+        // echo $lastcall;
+        // echo time();
         echo $timesinze;
         
     }

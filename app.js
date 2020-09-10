@@ -5,9 +5,9 @@ const humPerUnit=50
 window.onload = function() {
     
     var sliderup = document.getElementById("sliderup");
-    var sliderdown = document.getElementById("sliderdown")
+    // var sliderdown = document.getElementById("sliderdown")
     var outup = document.getElementById("outup");
-    var outdown= document.getElementById("outdown");
+    // var outdown= document.getElementById("outdown");
     var currval= document.getElementById("Currval");
 
     
@@ -34,8 +34,8 @@ window.setInterval(function(){
   // sendInfo()
   var valurl= "api.php?get=val"
   httpGetAsync(valurl,setVal)
-  checkAvalib
-}, 3000);
+  checkAvalib()
+}, 2000);
 }
 
 function checkAvalib(){
@@ -43,10 +43,13 @@ function checkAvalib(){
 }
 
 function setColor(val){
+  console.log(val)
   if(val>20){
     document.getElementById("Currval").style.color="red"
+    console.log("red")
   }else{
     document.getElementById("Currval").style.color="black"
+    console.log("black")
   }
 
   

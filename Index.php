@@ -26,26 +26,29 @@
           
        </article>
        <br>
-       <p>Desired moisture <br> 0 is dry, 10 is wet.</p>
+       <article2>
+            <h3>Currently measured moisture:</h3>
+            <h2 id="Currval">8</h2> 
+        </article2>
+        <br>
+       <h3>Desired moisture </h3>0 is dry, 10 is wet.
+       <br>
        <br>
        <div class="slidecontainer">
         <input type="range" min="0" max="1000" value="500" class="slider" id="sliderup">
       </div>
-      <p id="outup">6</p>
+      <br>
+      
+      <div class=outer> 
+      <div class="child1">0</div>
+      <div class= "child2" id="outup">6</div>
+      <div class="child3">10</div>
+      
+      
+      </div>
       <br>
      
-      <!-- <p>Info für de regler 2</p>
-      <br>
-      <div class="slidecontainer2">
-        <input type="range" min="300" max="700" value="50" class="slider" id="sliderdown">
-      </div>
-      <p id="outdown">360</p>
-       -->
-      <br>
-        <article2>
-            <p>Currently measured moisture:</p>
-            <h2 id="Currval">8</h2> 
-        </article2>
+        
         <!-- <svg id="svg1" xmlns="http://www.w3.org/2000/svg" style="width: 3.5in; height: 1in">
   <circle id="circle1" r="28" cx="34" cy="34" 
             style="fill: red; stroke: red; stroke-width: 2"/>
