@@ -19,9 +19,6 @@ int down=350;
 #define SSIDD "Zazzi"
 #define PASS "123456789zazzi"
 
-//const String ssidd = "Zazzi";
-//const String password = "123456789zazzi";
-
 int tempval;
 int tempUp;
 int tempDown;
@@ -33,6 +30,7 @@ void setup() {
    pinMode(LED_BUILTIN, OUTPUT);
    pinMode(13, OUTPUT);
    digitalWrite(13,HIGH);
+   digitalWrite(LED_BUILTIN,HIGH);
    Serial.begin(9600);   
    //client.begin(SSIDD, PASS);
    wifiConnect();
@@ -43,8 +41,7 @@ void setup() {
 
 void iot() {
   if(val>up){
-    Serial.println("Pumpstart at val: " + String(val));
-    Serial.println("with up: " + String(up));
+
     digitalWrite(13,LOW);
     digitalWrite(LED_BUILTIN, LOW);
     
@@ -52,17 +49,12 @@ void iot() {
     
   }
   else if(val<down){    
-    Serial.println("Pump STOP at val: " + String(val));
-    Serial.println("with down: " + String(down));           
+        
      digitalWrite(13,HIGH);
      digitalWrite(LED_BUILTIN, HIGH);
-  }else{
-    Serial.println("Pump NONE at val: " + String(val));
-    Serial.println("with down: " + String(down));  
-        Serial.println("with up: " + String(up));
-             
-    
   }
+             
+  
 }
 
 
@@ -146,13 +138,14 @@ int HttpReq(String path){
     Serial.println("connection failed!]");
     client.stop();
     digitalWrite(13,HIGH);
+    tmp=-111;
     
     
   }
   return tmp;
 }
 void httpMain(String val) {
- // if(WiFi.status()== WL_CONNECTED){
+ if(WiFi.status()== WL_CONNECTED){
 
 
       
@@ -165,21 +158,19 @@ void httpMain(String val) {
       tempval = HttpReq(val2path);
       tempUp = HttpReq(up2path);
       tempDown = HttpReq(down2path);
-      //if(tempUp!=-1){
+      if(tempUp>0){
         up = tempUp;
-      //}
-      //if{tempDown!=-1){
+      }
+      if(tempDown>0){
         down = tempDown;
-      //}
+      }
+   
       
-      //Serial.println(tempval);
-     // Serial.println(tempUp);
-      //Serial.println(downpath);
-      
-    //}
-    //else {
-      //Serial.println("WiFi Disconnected");
-    
+    }
+    else {
+      Serial.println("WiFi Disconnected");
+      delay(1000);
+    }
     
   
 }
